@@ -35,9 +35,11 @@ let g:mdvimtex_config = {
       \"continuous":1,
       \}
 
-command! MdVimtexCompile call mdvimtex#mdvimtex()
-command! MdVimtexUpdate  call mdvimtex#update()
-command! MdVimtexUpdateContinuous call mdvimtex#update_continuous()
+command! MdVimtexCompile    call mdvimtex#mdvimtex()
+command! MdVimtexUpdateTex  call mdvimtex#update_tex()
+
+nnoremap <Plug>(mdvimtex_compile)    :<C-U>MdVimtexCompile<CR>
+nnoremap <Plug>(mdvimtex_update_tex) :<C-U>MdVimtexUpdateTex<CR>
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

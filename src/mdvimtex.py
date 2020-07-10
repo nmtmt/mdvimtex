@@ -50,7 +50,7 @@ def update_tex(**kwargs):
 
     texbuf = texbuf.decode('utf-8')
     main = template.replace("<<converted>>", texbuf)
-    main = main.replace(r"\includegraphics", r"\includegraphics[width=\textwidth]")
+    main = main.replace(r"\includegraphics", r"\includegraphics[width=\linewidth]")
     main = main.replace(r"\begin{figure}", r"\begin{figure}[htbp]")
 
     with open(path, "w") as f:
