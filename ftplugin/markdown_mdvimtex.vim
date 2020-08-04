@@ -34,6 +34,12 @@ nnoremap <Plug>(mdvimtex_compile)    :<C-U>MdVimtexCompile<CR>
 nnoremap <Plug>(mdvimtex_update_tex) :<C-U>MdVimtexUpdateTex<CR>
 
 for mapping in g:mdvimtex_config["nmap"]
+  let key = split(mapping, " ")[0]
+  try
+    exec "unmap " . key
+  catch
+    exec "unmap <buffer> " . key
+  endtry
   exec "nmap " . mapping
 endfor
 
