@@ -1,3 +1,8 @@
+" do not load mdvimtex and vimtex if we don't have latexmk command
+if system('which latexmk') !=# ''
+  finish
+endif
+
 " init vimtex
 let s:tex_vim_path = expand('<sfile>:p:h') . '/tex.vim'
 exec "source " . s:tex_vim_path
