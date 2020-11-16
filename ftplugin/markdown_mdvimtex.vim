@@ -1,5 +1,6 @@
 " do not load mdvimtex and vimtex if we don't have latexmk command
-if system('which latexmk') !=# ''
+call system('which latexmk')
+if v:shell_error!=0
   finish
 endif
 
